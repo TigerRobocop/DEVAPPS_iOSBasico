@@ -13,10 +13,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var inputUserName: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {

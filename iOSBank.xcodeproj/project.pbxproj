@@ -14,6 +14,9 @@
 		57BB514220A7691200408A64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB514120A7691200408A64 /* LoginViewController.swift */; };
 		57BB514420A7692300408A64 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB514320A7692300408A64 /* MainViewController.swift */; };
 		57BB514620A7693600408A64 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB514520A7693600408A64 /* SettingsViewController.swift */; };
+		57BB514F20A7789B00408A64 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB514E20A7789B00408A64 /* User.swift */; };
+		57BB515320A77F2700408A64 /* WithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB515220A77F2700408A64 /* WithdrawalViewController.swift */; };
+		57BB515520A77F3D00408A64 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB515420A77F3D00408A64 /* DepositViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		57BB514120A7691200408A64 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		57BB514320A7692300408A64 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57BB514520A7693600408A64 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		57BB514E20A7789B00408A64 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		57BB515220A77F2700408A64 /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
+		57BB515420A77F3D00408A64 /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 				57BB514720A7694200408A64 /* Controllers */,
 				578560B220A7623500130065 /* Main.storyboard */,
 				578560BA20A7623500130065 /* Info.plist */,
+				57BB514E20A7789B00408A64 /* User.swift */,
 			);
 			path = iOSBank;
 			sourceTree = "<group>";
@@ -82,6 +89,8 @@
 				57BB514120A7691200408A64 /* LoginViewController.swift */,
 				57BB514320A7692300408A64 /* MainViewController.swift */,
 				57BB514520A7693600408A64 /* SettingsViewController.swift */,
+				57BB515220A77F2700408A64 /* WithdrawalViewController.swift */,
+				57BB515420A77F3D00408A64 /* DepositViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,8 +168,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BB514220A7691200408A64 /* LoginViewController.swift in Sources */,
+				57BB515320A77F2700408A64 /* WithdrawalViewController.swift in Sources */,
 				578560AF20A7623500130065 /* AppDelegate.swift in Sources */,
 				57BB514620A7693600408A64 /* SettingsViewController.swift in Sources */,
+				57BB515520A77F3D00408A64 /* DepositViewController.swift in Sources */,
+				57BB514F20A7789B00408A64 /* User.swift in Sources */,
 				57BB514420A7692300408A64 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

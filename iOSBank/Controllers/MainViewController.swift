@@ -11,15 +11,26 @@ import UIKit
 class MainViewController: UIViewController {
 
     var userName: String?
+    var currentUser: User?
     
     @IBOutlet weak var labelUserName: UILabel!
+    @IBOutlet weak var labelBalance: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelUserName.text = userName
         
+        currentUser = User(userName: userName!)
+        labelUserName.text = currentUser?.userName
         
+        labelBalance.text = String(currentUser!.balance)
         self.navigationController!.navigationBar.topItem!.title = "Logout"
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +38,24 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func showAlert(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "OI", message: "teste de alert", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in
+            print("OK")
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in
+            print("Cancel")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Destroy", style: .destructive, handler: {(action) in
+            print("Destroy")
+        }))
+        
+        present(alert, animated: true)
+    }
 
     /*
     // MARK: - Navigation
