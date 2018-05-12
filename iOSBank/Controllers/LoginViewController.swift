@@ -8,8 +8,11 @@
 
 import UIKit
 
-class LoginViewController: VCLLoggingViewController {
+class LoginViewController: UIViewController {
 
+    @IBOutlet weak var inputUserName: UITextField!
+    @IBOutlet weak var inputPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,14 +25,13 @@ class LoginViewController: VCLLoggingViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if let destinationViewController = segue.destination as? MainViewController {
+            destinationViewController.userName = inputUserName.text
+            
+            inputUserName.text = ""
+            inputPassword.text = ""
+        }
     }
-    */
-
 }

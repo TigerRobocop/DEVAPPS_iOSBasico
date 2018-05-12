@@ -8,20 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		578560AF20A7623500130065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578560AE20A7623500130065 /* AppDelegate.swift */; };
-		578560B120A7623500130065 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578560B020A7623500130065 /* ViewController.swift */; };
 		578560B420A7623500130065 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578560B220A7623500130065 /* Main.storyboard */; };
 		578560B620A7623500130065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 578560B520A7623500130065 /* Assets.xcassets */; };
 		578560B920A7623500130065 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578560B720A7623500130065 /* LaunchScreen.storyboard */; };
 		57BB514220A7691200408A64 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB514120A7691200408A64 /* LoginViewController.swift */; };
 		57BB514420A7692300408A64 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB514320A7692300408A64 /* MainViewController.swift */; };
 		57BB514620A7693600408A64 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB514520A7693600408A64 /* SettingsViewController.swift */; };
-		57BB514920A7698400408A64 /* VCLLoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB514820A7698400408A64 /* VCLLoggingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		578560AB20A7623500130065 /* iOSBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		578560AE20A7623500130065 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		578560B020A7623500130065 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		578560B320A7623500130065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		578560B520A7623500130065 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		578560B820A7623500130065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -29,7 +26,6 @@
 		57BB514120A7691200408A64 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		57BB514320A7692300408A64 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		57BB514520A7693600408A64 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		57BB514820A7698400408A64 /* VCLLoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VCLLoggingViewController.swift; path = ../../../../../VCLLoggingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +69,6 @@
 		57BB514020A7686E00408A64 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				57BB514820A7698400408A64 /* VCLLoggingViewController.swift */,
 				578560AE20A7623500130065 /* AppDelegate.swift */,
 				578560B520A7623500130065 /* Assets.xcassets */,
 				578560B720A7623500130065 /* LaunchScreen.storyboard */,
@@ -84,7 +79,6 @@
 		57BB514720A7694200408A64 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				578560B020A7623500130065 /* ViewController.swift */,
 				57BB514120A7691200408A64 /* LoginViewController.swift */,
 				57BB514320A7692300408A64 /* MainViewController.swift */,
 				57BB514520A7693600408A64 /* SettingsViewController.swift */,
@@ -164,9 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57BB514920A7698400408A64 /* VCLLoggingViewController.swift in Sources */,
 				57BB514220A7691200408A64 /* LoginViewController.swift in Sources */,
-				578560B120A7623500130065 /* ViewController.swift in Sources */,
 				578560AF20A7623500130065 /* AppDelegate.swift in Sources */,
 				57BB514620A7693600408A64 /* SettingsViewController.swift in Sources */,
 				57BB514420A7692300408A64 /* MainViewController.swift in Sources */,

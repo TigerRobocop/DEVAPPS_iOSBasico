@@ -2,18 +2,24 @@
 //  MainViewController.swift
 //  iOSBank
 //
-//  Created by Liv Souza on 12/05/18.
+//  Created by Liv  on 12/05/18.
 //  Copyright © 2018 CESAR School. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: VCLLoggingViewController {
+class MainViewController: UIViewController {
 
+    var userName: String?
+    
+    @IBOutlet weak var labelUserName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        labelUserName.text = userName
+        
+        
+        self.navigationController!.navigationBar.topItem!.title = "Logout"
     }
 
     override func didReceiveMemoryWarning() {

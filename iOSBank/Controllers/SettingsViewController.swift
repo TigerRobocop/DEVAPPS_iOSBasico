@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: VCLLoggingViewController {
+class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
