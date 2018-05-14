@@ -11,26 +11,27 @@ import UIKit
 class MainViewController: UIViewController {
 
     var userName: String?
-    var currentUser: User?
+    //var currentUser: User?
+    var currentUser = User.instance
     
     @IBOutlet weak var labelUserName: UILabel!
     @IBOutlet weak var labelBalance: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        currentUser = User(userName: userName!)
-        labelUserName.text = currentUser?.userName
-        
-        labelBalance.text = String(currentUser!.balance)
-        self.navigationController!.navigationBar.topItem!.title = "Logout"
+           self.navigationController!.navigationBar.topItem!.title = "Logout"
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController!.navigationBar.isHidden = false
+        
+        if userName != nil {
+            currentUser.userName = userName!
+        }
+       
+        labelUserName?.text = currentUser.getUserName()
+        labelBalance?.text = String(currentUser.getBalance())
     }
 
     override func didReceiveMemoryWarning() {

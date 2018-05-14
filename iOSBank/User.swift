@@ -14,19 +14,27 @@ class User
     var userName: String
     var balance: Float
     var limit: Float
+    let maxLimit: Float
     
-    init(userName: String) {
-        self.userName = userName
+    init() {
+        self.userName = ""
         self.balance = 2000
-        self.limit = 5000
+        self.limit = 1000
+        self.maxLimit = 5000
     }
     
-    
     func getBalance() -> Float { return self.balance }
+    func getLimit() -> Float { return self.limit }
+    func getMaxLimit() -> Float { return self.maxLimit }
     func getUserName() -> String { return self.userName }
     
-    func deposit(amount: Float) -> Float { return amount }
-    func withdrawal(amount: Float) -> Float { return amount }
+    func deposit(amount: Float) {
+        self.balance = self.balance + amount
+    }
+    
+    func withdrawal(amount: Float) {
+       self.balance = self.balance - amount
+    }
     
     var listOfStrings = ["Rainbow", "Banana", "Social"]
     
@@ -35,7 +43,7 @@ class User
     static var instance: User {
         get {
             if singleton == nil {
-                singleton = User(userName: userName)
+                singleton = User()
             }
             return singleton!
         }

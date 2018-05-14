@@ -9,29 +9,53 @@
 import UIKit
 
 class WithdrawalViewController: UIViewController {
-
-
- 
     
+    var currentUser = User.instance
+    
+    @IBOutlet weak var inputAmount: UITextField!
+    @IBOutlet weak var labelBalance: UILabel!
+    @IBOutlet weak var labelLimit: UILabel!
+    
+    @IBAction func submit(_ sender: UIButton) {
+        
+        if let input = inputAmount.text {
+            if input.isEmpty || Float(input) == 0 {
+                let alert = UIAlertController(title: "Alert", message: "Amount is required", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in
+                    print("OK")
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+            } else if Float(input)! > currentUser.getBalance() {
+                let alert = UIAlertController(title: "Alert", message: "Amount unavailable", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in
+                    print("OK")
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+            } else {
+                currentUser.withdrawal(amount: Float(input)!)
+                
+                let alert = UIAlertController(title: "Alert"
+                    , message: input + " Withdrawal Successful!\nNew balance: " + String(currentUser.getBalance())
+                    , preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in
+                    self.navigationController?.popViewController(animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            
+            
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController!.navigationBar.topItem!.title = "Cancel"
+        labelBalance.text = String(currentUser.getBalance())
+        labelLimit.text = String(currentUser.getLimit())
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
