@@ -26,11 +26,23 @@ class LoginViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let destinationViewController = segue.destination as? MainViewController {
-            destinationViewController.userName = inputUserName.text
+        let login = User.instance.login(login: inputUserName.text!, pass: inputPassword.text!)
+        
+        if (login) {
+            if let destinationViewController = segue.destination as? MainViewController {
+                destinationViewController.userName = inputUserName.text
+                
+                inputUserName.text = ""
+                inputPassword.text = ""
+            }
+        } else {
+            let alert = UIAlertController(title: "Alert", message: "Login invalid", preferredStyle: .alert)
             
-            inputUserName.text = ""
-            inputPassword.text = ""
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in
+                print("OK")
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }

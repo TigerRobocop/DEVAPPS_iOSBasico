@@ -10,34 +10,6 @@ import Foundation
 
 class User
 {
-    //var id: Int
-    var userName: String
-    var balance: Float
-    var limit: Float
-    let maxLimit: Float
-    
-    init() {
-        self.userName = ""
-        self.balance = 2000
-        self.limit = 1000
-        self.maxLimit = 5000
-    }
-    
-    func getBalance() -> Float { return self.balance }
-    func getLimit() -> Float { return self.limit }
-    func getMaxLimit() -> Float { return self.maxLimit }
-    func getUserName() -> String { return self.userName }
-    
-    func deposit(amount: Float) {
-        self.balance = self.balance + amount
-    }
-    
-    func withdrawal(amount: Float) {
-       self.balance = self.balance - amount
-    }
-    
-    var listOfStrings = ["Rainbow", "Banana", "Social"]
-    
     private static var singleton: User?
     
     static var instance: User {
@@ -49,19 +21,87 @@ class User
         }
     }
     
-    func size() -> Int {
-        return listOfStrings.count
+    var userLogin: String = "liv"
+    var userPassword: String = "123"
+    var userName: String = "Liv Souza"
+    var balance: Float
+    var limit: Float
+    var transactions = [Transaction]()
+    
+    init() {
+        self.balance = 2000
+        self.limit = 500
     }
     
-    func insert(value: String) {
-        listOfStrings.append(value)
+    func getUserName() -> String { return self.userName }
+    func getUserLogin() -> String { return self.userLogin }
+    func getUserPassword() -> String { return self.userPassword }
+    
+    func getBalance() -> Float { return self.balance }
+    func getLimit() -> Float {
+        if self.balance < self.limit { return self.balance }
+        else { return self.limit }
     }
     
-    func remove(at index: Int) -> String {
-        return listOfStrings.remove(at: index)
+    
+    func deposit(amount: Float) {
+        self.balance = self.balance + amount
+        let transaction = Transaction(amount: amount, transactionType: "deposit")
+        self.transactions.append(transaction)
     }
     
-    func get (at index: Int) -> String {
-        return listOfStrings[index]
+    func withdrawal(amount: Float) {
+        self.balance = self.balance - amount
+        let transaction = Transaction(amount: amount, transactionType: "withdrawal")
+        self.transactions.append(transaction)
+    }
+   
+    func updateSettings (newName: String, newLimit: Float) {
+        self.userName = newName
+        self.limit = newLimit
+    }
+    
+    func login (login: String, pass: String) -> Bool {
+        return login == self.userLogin && pass == self.userPassword
+    }
+    
+//    var listOfStrings = ["Rainbow", "Banana", "Social"]
+//
+//
+//
+//    func size() -> Int {
+//        return listOfStrings.count
+//    }
+//
+//    func insert(value: String) {
+//        listOfStrings.append(value)
+//    }
+//
+//    func remove(at index: Int) -> String {
+//        return listOfStrings.remove(at: index)
+//    }
+//
+//    func get (at index: Int) -> String {
+//        return listOfStrings[index]
+//    }
+}
+
+struct Transaction {
+    
+    var id: Int
+    var transactionType: String
+    var amount: Float
+    
+    static var lastId = 0
+    
+    static func getNextId() -> Int {
+        lastId += 1
+        return lastId
+    }
+    
+    init (amount: Float, transactionType: String) {
+        self.id = Transaction.getNextId()
+        self.amount = amount
+        self.transactionType = transactionType
     }
 }

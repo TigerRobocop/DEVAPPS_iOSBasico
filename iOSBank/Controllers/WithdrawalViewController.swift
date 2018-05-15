@@ -27,7 +27,7 @@ class WithdrawalViewController: UIViewController {
                 }))
                 self.present(alert, animated: true, completion: nil)
                 
-            } else if Float(input)! > currentUser.getBalance() {
+            } else if Float(input)! > currentUser.getLimit() {
                 let alert = UIAlertController(title: "Alert", message: "Amount unavailable", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in
