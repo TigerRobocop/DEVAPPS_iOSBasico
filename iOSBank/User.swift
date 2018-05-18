@@ -42,6 +42,8 @@ class User
         if self.balance < self.limit { return self.balance }
         else { return self.limit }
     }
+
+    func getTransactions() -> [Any] { return self.transactions }
     
     
     func deposit(amount: Float) {
