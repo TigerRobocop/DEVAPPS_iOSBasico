@@ -55,7 +55,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let transaction = currentUser.transactions[indexPath.row] //.get(at: indexPath.row)
         cell.textLabel?.text = transaction.transactionType
         cell.detailTextLabel?.text = String(transaction.amount)
-        //cell.imageView?.image = #imageLiteral(resourceName: "hangloose")
+        cell.imageView?.image = transaction.transactionType == "deposit" ? #imageLiteral(resourceName: "down") : #imageLiteral(resourceName: "up")
         
         return cell
     }
